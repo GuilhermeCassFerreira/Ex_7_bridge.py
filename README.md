@@ -11,7 +11,7 @@ Para executar a API de Tarefas em seu ambiente local, siga as etapas de configur
 Certifique-se de que você tenha os seguintes requisitos em seu ambiente:
 
 - Python 3 instalado em seu sistema.
-- PostgreSQL instalado e configurado, com um banco de dados chamado 'seu_banco', um usuário 'seu_usuario' e senha 'sua_senha'. Você pode ajustar essas configurações no código, se necessário.
+- PostgreSQL instalado e configurado, com um banco de dados chamado 'postgres', um usuário 'postgres' e senha 'AG123'. Você pode ajustar essas configurações no código, se necessário.
 - Pip (gerenciador de pacotes Python) instalado em seu sistema.
 
 ### 2. Instalação das Dependências
@@ -21,6 +21,27 @@ Use o pip para instalar as dependências necessárias:
 ```
 pip install Flask Flask-JWT-Extended peewee psycopg2-binary bcrypt
 ```
+
+## Banco de Dados
+
+A API utiliza um banco de dados PostgreSQL para armazenar informações de usuários e tarefas. O esquema do banco de dados inclui duas tabelas principais:
+
+### Tabela 'users'
+
+- `id` (Chave Primária): Identificador exclusivo de usuário.
+- `username`: Nome de usuário único.
+- `email`: Endereço de e-mail único.
+- `password`: Senha do usuário (criptografada, não armazenada como texto claro).
+- `admin`: Indica se o usuário possui privilégios de administrador.
+- `auth_token`: Token de autenticação JWT (JSON Web Token) para autenticação do usuário.
+
+### Tabela 'tasks'
+
+- `id` (Chave Primária): Identificador exclusivo de tarefa.
+- `title`: Título da tarefa.
+- `completed`: Indica se a tarefa foi concluída (true/false).
+
+As senhas dos usuários são armazenadas de forma criptografada usando a função `bcrypt` para garantir a segurança dos dados do usuário.
 
 ## Executando a API
 
@@ -60,4 +81,4 @@ Este projeto está aberto a contribuições. Se você deseja melhorar, corrigir 
 
 ---
 
-Este README fornece uma visão geral detalhada da API de Tarefas, além de orientações sobre configuração, instalação e uso.
+Este README fornece uma visão geral detalhada da API de Tarefas, orientações sobre configuração, instalação e uso, além de informações sobre o banco de dados utilizado. Lembre-se de personalizar o README com informações adicionais ou requisitos específicos do seu projeto, se aplicável.
