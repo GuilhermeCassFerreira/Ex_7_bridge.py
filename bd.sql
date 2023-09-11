@@ -14,11 +14,11 @@ CREATE TABLE users (
     auth_token VARCHAR(255)
 );
 
--- Inserções de exemplo na tabela 'users' (senhas não criptografadas)
+-- Inserções de exemplo na tabela 'users' 
 INSERT INTO users (username, email, password, admin) VALUES
-    ('admin', 'admin@example.com', 'senha_admin', true),
-    ('user1', 'user1@example.com', 'senha_user1', false),
-    ('user2', 'user2@example.com', 'senha_user2', false);
+    ('admin', 'admin@example.com', '$2b$12$RCM7h7cpaO.oWYQc.GIwL.q/yT.XC3PZU1WIr6OwRhPvff6jAKJHW', true), --senha: senha_admin
+    ('user1', 'user1@example.com', '$2b$12$R0y27WksjhxWHR.1.6t8AunQFgVYh.WaG0.OleX4bjxTgfv5f2gkK', false), --senha: senha_user1
+    ('user2', 'user2@example.com', '$2b$12$rWlUxy9OYMyhnRi9FvS8bO/QUSjg2j8oHfYf5XT8P95BwHTv0Fyaa', false); --senha: senha_user2
 
 -- Criação da tabela 'tasks'
 CREATE TABLE tasks (
