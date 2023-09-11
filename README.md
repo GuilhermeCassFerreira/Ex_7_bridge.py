@@ -1,7 +1,3 @@
-Claro, aqui está uma versão aprimorada do README:
-
----
-
 # API de Tarefas (Tasks API)
 
 A API de Tarefas é uma aplicação simples que permite gerenciar tarefas (tasks) com autenticação de usuário. Esta API foi construída usando o framework Flask e se integra ao banco de dados PostgreSQL. Ela oferece funcionalidades para criar, listar, atualizar e excluir tarefas, além de fornecer autenticação de usuário baseada em JWT (JSON Web Tokens).
